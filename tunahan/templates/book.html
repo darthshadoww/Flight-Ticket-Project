@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yıldız Airlines</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/assets/book_style.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img
+              src="/static/assets/logo.png"
+              height="60"
+              alt=""
+              srcset=""
+            />
+            <span>Yıldız<strong class="strong">Airlines</strong></span>
+          </div>
+          <div class="navigation">
+            <a href="#" class="nav-link"><strong>Ana Sayfa</strong></a>
+            <a href="#" class="nav-link">Servisler</a>
+            <a href="#" class="nav-link"><strong>Teklifler</strong></a>
+            <a href="#" class="nav-link">Hakkında</a>
+            <a href="#" class="nav-link"><strong>İletişim</strong></a>
+          </div>
+          <div class="controls">
+            <div class="icon"><i class="fa fa-search"></i></div>
+            <div class="icon"><i class="fa fa-user-alt"></i></div>
+            <div class="btn">Kayıt Ol</div>
+          </div>
+        </div>
+      </nav>
+      <div class="tickets">
+        <h1>Uçuşlar</h1>
+        <div class="bilet-container">
+          {% for ticket in tickets %}
+          <div class="bilet">
+
+            <div class="from">
+              <label for="first-city">Kalkış</label>
+              <span>{{ ticket['from'] }}</span>
+              <div class="logo_from">
+                
+                <img src="/static/assets/plane-from.png" alt=""
+                srcset="">
+              </div>
+            </div>
+            <div class="arrival">
+              <label for="arrival">Varış</label>
+              <span>{{ ticket['arrival'] }}</span>
+              <div class="logo_arrival">
+                
+                <img src="/static/assets/plane-arrival.png" alt=""
+                srcset="">
+              </div>
+            </div>
+            <div class="time">
+              <label for="first-city">Saat</label>
+              <span>{{ ticket['time'] }}</span>
+              <div class="logo_time">
+                
+                <img src="/static/assets/clock-time.png" alt=""
+                srcset="">
+              </div>
+            </div>
+            <div class="date">
+              <label for="first-city">Tarih</label>
+              <span>{{ ticket['date'] }}</span>
+              <div class="logo_date">
+                
+                <img src="/static/assets/calendar-date.png" alt=""
+                srcset="">
+              </div>
+            </div>
+            <div class="fee">
+                <label for="first-city">Ücret</label>
+                <span>{{ ticket['fee'] }}</span>
+                <div class="logo_fee">
+                
+                  <img src="/static/assets/money-fee.png" alt=""
+                  srcset="">
+                </div>
+              </div>
+              <div class="flight-buy-button">
+                <button id="buy-button">Uçuşu Seç</button>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
