@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <div id="selected-flight"></div>
+    <button id="confirm-button">Confirm Purchase</button>
+
+    <script>
+        const selectedFlight = JSON.parse(sessionStorage.getItem('selectedFlight'));
+
+        if (selectedFlight) {
+            const selectedFlightElement = document.getElementById('selected-flight');
+            selectedFlightElement.innerHTML = `
+                <h2>Selected Flight Details</h2>
+                <p>Departure Date: ${new Date(selectedFlight.OutboundLeg.DepartureDate).toLocaleDateString()}</p>
+                <p>Arrival Date: ${new Date(selectedFlight.InboundLeg.DepartureDate).toLocaleDateString()}</p>
+                <p>Price: ${selectedFlight.MinPrice}</p>
+            `;
+        }
+
+        document.getElementById('confirm-button').addEventListener('click', function() {
+            // Simulate payment processing
+            alert('Thank you for your purchase!');
+            sessionStorage.removeItem('selectedFlight');
+            window.location.href = 'confirmation.html';
+        });
+    </script>
+</body>
+</html>
