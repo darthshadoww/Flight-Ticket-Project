@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choose Your Flight</title>
+</head>
+<body>
+    <h1>Choose Your Flight</h1>
+    <table>
+        {% for flight in flights %}
+        <tr>
+            <td> ... Flight details (origin, destination, price, etc.) ... </td>
+            <td>
+                <form method="POST" action="/book">
+                    <input type="hidden" name="flight_id" value="{{ flight.id }}">
+                    <button type="submit">Book</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

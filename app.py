@@ -1,65 +1,46 @@
-# app.py
-from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+import pandas as pd
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-db = SQLAlchemy(app)
 
-# Import database models
-from models import Administrator, User, Flight, Booking
-from forms import RegistrationForm, LoginForm
+# Load Data
+airports = pd.read_csv('data/airports.csv')
+flights = pd.read_csv('data/flights.csv')
 
-# Routes for CRUD operations
-# ... other imports
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    city_list = City.query.all()
-    return render_template('index.html', city_list=city_list)
+    if request.method == 'POST':
+        origin = request.form['origin']
+        destination = request.form['destination']
+        date = request.form['date']
 
-@app.route('/search_flights', methods=['POST'])
-def search_flights():
-    # Get search parameters from the form...
-    # Query the database for flights...
-    # (Example with dummy data for now)
-    flights = [
-        # ... add your flight data ...
-    ]
-    return render_template('book.html', tickets=flights)
+        available_flights = flights[(flights['origin'] == origin) &
+                                    (flights['destination'] == destination)]
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        # Create a new user object...
-        # Hash the password...
-        # Add user to the database and commit...
-        return redirect(url_for('login'))
-    return render_template('register.html', form=form)
+        return render_template('pick-flights.html', flights=available_flights)  
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        # Find the user by username or email...
-        # Check the password hash...
-        # Create a user session...
-        return redirect(url_for('index'))
-    return render_template('login.html', form=form)
-
-@app.route('/logout')
-def logout():
-    session.pop('user_id', None)
-    return redirect(url_for('index'))
+    return render_template('index.html', airports=airports.to_dict(orient='records'), flight=None)
 
 
-@app.route('/book/<int:flight_id>')
-def book_flight(flight_id):
-    flight = Flight.query.get_or_404(flight_id)  # Get selected flight by ID
-    return render_template('booking_form.html', flight=flight)
+@app.route('/book', methods=['POST'])
+def book():
+    selected_flight_id = request.form.get('flight_id')
+
+    # Find the specific flight details
+    selected_flight = flights[flights['id'] == selected_flight_id]
+
+    return render_template('book.html', flight=selected_flight)
 
 
+@app.route('/congrats', methods=['POST'])
+def congrats():
+    # Extract booking details from request.form 
 
-if __name__ == '__app__':
-    app.run(debug=True)
+    # ... (Validation, payment processing, email would happen here)
+
+    return render_template('congrats.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True,port=8080)

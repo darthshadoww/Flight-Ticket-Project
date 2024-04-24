@@ -1,0 +1,21 @@
+id,origin,destination,company_name,company_code,price
+1,ATL,JFK,Delta Air Lines,DAL,325
+2,ATL,JFK,United Airlines,UAL,360
+3,ATL,JFK,American Airlines,AAL,340
+4,ATL,LAX,Delta Air Lines,DAL,455
+5,ATL,LAX,United Airlines,UAL,420
+6,ATL,LAX,Turkish Airlines,THY,580
+7,ATL,DXB,Emirates,EK,765
+8,ATL,DXB,Qatar Airways,QTR,720
+9,ATL,LHR,British Airways,BA,650
+10,ATL,LHR,Virgin Atlantic,VS,680
+11,JFK,LAX,Delta Air Lines,DAL,410
+12,JFK,LAX,American Airlines,AAL,435
+13,JFK,LHR,British Airways,BA,620
+14,JFK,LHR,Air France,AF,590
+15,JFK,DXB,Emirates,EK,715
+16,LAX,DXB,Emirates,EK,780
+17,LAX,DXB,Qatar Airways,QTR,755
+18,LAX,LHR,British Airways,BA,695
+19,LAX,LHR,Virgin Atlantic,VS,660
+20,LAX,SIN,Singapore Airlines,SQ,740

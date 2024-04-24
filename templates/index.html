@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Book Your Flight</h1>
+    <form method="POST" action="/">
+        <label for="origin">Origin:</label>
+        <select name="origin" id="origin">
+            {% for airport in airports %}
+            <option value="{{ airport.code }}">{{ airport.city }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="destination">Destination:</label>
+        <select name="destination" id="destination">
+            {% for airport in airports %}
+            <option value="{{ airport.code }}">{{ airport.city }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" required>
+
+        <button type="submit">Search Flights</button>
+    </form>
+</body>
+</html>

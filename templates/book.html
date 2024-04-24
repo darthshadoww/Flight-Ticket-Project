@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Flight</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Book Your Flight</h1>
+
+    <p>Origin: {{ flight.origin }}</p>
+    <p>Destination: {{ flight.destination }}</p>
+    <p>Date: {{ flight.date }}</p> <h2>Payment Details</h2>
+    <form method="POST" action="/congrats">
+        <input type="hidden" name="flight_id" value="{{ flight.id }}">
+
+        <label for="card_number">Credit Card Number:</label>
+        <input type="text" name="card_number" id="card_number" required><br><br>
+
+        <label for="expiry">Expiry Date (MM/YY):</label>
+        <input type="text" name="expiry" id="expiry" required><br><br>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" name="cvv" id="cvv" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br><br>
+
+        <button type="submit">Book Flight</button>
+    </form>
+</body>
+</html>
