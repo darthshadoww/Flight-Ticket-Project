@@ -10,14 +10,14 @@
         <label for="origin">Origin:</label>
         <select name="origin" id="origin">
             {% for airport in airports %}
-            <option value="{{ airport.code }}">{{ airport.city }}</option>
+            <option value="{{ airport['Code'] }}">{{ airport['Name'] }}</option>
             {% endfor %}
         </select>
 
         <label for="destination">Destination:</label>
         <select name="destination" id="destination">
             {% for airport in airports %}
-            <option value="{{ airport.code }}">{{ airport.city }}</option>
+            <option value="{{ airport['Code'] }}">{{ airport['Name'] }}</option>
             {% endfor %}
         </select>
 

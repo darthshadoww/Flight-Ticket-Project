@@ -19,3 +19,134 @@ id,origin,destination,company_name,company_code,price
 18,LAX,LHR,British Airways,BA,695
 19,LAX,LHR,Virgin Atlantic,VS,660
 20,LAX,SIN,Singapore Airlines,SQ,740
+21,HND,PEK,ANA,ANA,520
+22,HND,PEK,China Eastern Airlines,CES,500
+23,HND,LAX,Japan Airlines,JAL,690
+24,HND,LAX,Delta Air Lines,DAL,720
+25,HND,LAX,ANA,ANA,710
+26,HND,SIN,Singapore Airlines,SQ,600
+27,HND,SIN,Cathay Pacific,CX,580
+28,HND,LHR,British Airways,BA,780
+29,HND,LHR,Japan Airlines,JAL,760
+30,HND,DXB,Emirates,EK,820
+31,HND,DXB,Qantas,QFA,800
+32,PEK,LHR,Air China,CCA,680
+33,PEK,LHR,British Airways,BA,700
+34,PEK,LAX,Hainan Airlines,CHH,790
+35,PEK,LAX,China Southern Airlines,CSN,770
+36,PEK,JFK,Air China,CCA,710
+37,PEK,JFK,China Eastern Airlines,CES,730
+38,PEK,SIN,Singapore Airlines,SQ,670
+39,PEK,SIN,Air China,CCA,650
+40,PEK,DXB,Emirates,EK,750
+41,DXB,LHR,Emirates,EK,680
+42,DXB,LHR,British Airways,BA,660
+43,DXB,LAX,Emirates,EK,800
+44,DXB,LAX,Qantas,QFA,780
+45,DXB,JFK,Emirates,EK,820
+46,DXB,JFK,Qatar Airways,QTR,810
+47,DXB,SIN,Emirates,EK,730
+48,DXB,SIN,Singapore Airlines,SQ,710
+49,DXB,HND,Emirates,EK,850
+50,DXB,HND,Qantas,QFA,830
+51,ATL,PEK,Delta Air Lines,DAL,890
+52,ATL,PEK,Air China,CCA,870
+53,ATL,HND,Delta Air Lines,DAL,950
+54,ATL,HND,ANA,ANA,930
+55,ATL,SIN,Singapore Airlines,SQ,1100
+56,ATL,SIN,Delta Air Lines,DAL,1080
+57,ATL,LAX,Delta Air Lines,DAL,500
+58,ATL,LAX,United Airlines,UAL,480
+59,ATL,LHR,British Airways,BA,720
+60,ATL,LHR,Virgin Atlantic,VS,700
+61,ATL,DXB,Emirates,EK,880
+62,ATL,DXB,Qatar Airways,QTR,860
+63,JFK,PEK,Air China,CCA,900
+64,JFK,PEK,China Eastern Airlines,CES,920
+65,JFK,HND,Japan Airlines,JAL,980
+66,JFK,HND,ANA,ANA,960
+67,JFK,SIN,Singapore Airlines,SQ,1200
+68,JFK,SIN,Cathay Pacific,CX,1180
+69,JFK,LAX,Delta Air Lines,DAL,550
+70,JFK,LAX,American Airlines,AAL,530
+71,JFK,LHR,British Airways,BA,770
+72,JFK,LHR,Japan Airlines,JAL,750
+73,JFK,DXB,Emirates,EK,930
+74,JFK,DXB,Qatar Airways,QTR,910
+75,LAX,PEK,China Southern Airlines,CSN,950
+76,LAX,PEK,Hainan Airlines,CHH,970
+77,LAX,HND,Japan Airlines,JAL,1050
+78,LAX,HND,ANA,ANA,1030
+79,LAX,SIN,Singapore Airlines,SQ,1250
+80,LAX,SIN,United Airlines,UAL,1230
+81,LAX,LHR,British Airways,BA,770
+82,LAX,LHR,Virgin Atlantic,VS,750
+83,LAX,DXB,Emirates,EK,930
+84,LAX,DXB,Qantas,QFA,910
+85,PEK,HND,Japan Airlines,JAL,980
+86,PEK,HND,ANA,ANA,960
+87,PEK,SIN,Singapore Airlines,SQ,1200
+88,PEK,SIN,China Eastern Airlines,CES,1180
+89,PEK,LAX,Delta Air Lines,DAL,550
+90,PEK,LAX,Air China,CCA,530
+91,PEK,LHR,British Airways,BA,770
+92,PEK,LHR,China Southern Airlines,CSN,750
+93,PEK,DXB,Emirates,EK,930
+94,PEK,DXB,Qatar Airways,QTR,910
+95,HND,ATL,Delta Air Lines,DAL,890
+96,HND,ATL,ANA,ANA,870
+97,HND,JFK,Japan Airlines,JAL,950
+98,HND,JFK,ANA,ANA,930
+99,HND,SIN,Singapore Airlines,SQ,1100
+100,HND,SIN,Delta Air Lines,DAL,1080
+101,HND,LAX,Delta Air Lines,DAL,500
+102,HND,LAX,United Airlines,UAL,480
+103,HND,LHR,British Airways,BA,720
+104,HND,LHR,Virgin Atlantic,VS,700
+105,HND,DXB,Emirates,EK,880
+106,HND,DXB,Qatar Airways,QTR,860
+107,SIN,ATL,Singapore Airlines,SQ,1100
+108,SIN,ATL,Delta Air Lines,DAL,1080
+109,SIN,JFK,Singapore Airlines,SQ,1200
+110,SIN,JFK,Cathay Pacific,CX,1180
+111,SIN,LAX,Singapore Airlines,SQ,1250
+112,SIN,LAX,United Airlines,UAL,1230
+113,SIN,PEK,Singapore Airlines,SQ,1200
+114,SIN,PEK,China Eastern Airlines,CES,1180
+115,SIN,HND,Singapore Airlines,SQ,1100
+116,SIN,HND,Delta Air Lines,DAL,1080
+117,LAX,ATL,Delta Air Lines,DAL,500
+118,LAX,ATL,United Airlines,UAL,480
+119,LAX,JFK,Delta Air Lines,DAL,550
+120,LAX,JFK,American Airlines,AAL,530
+121,LAX,HND,Delta Air Lines,DAL,500
+122,LAX,HND,United Airlines,UAL,480
+123,LAX,SIN,United Airlines,UAL,1230
+124,LAX,SIN,Delta Air Lines,DAL,1080
+125,LAX,PEK,Delta Air Lines,DAL,550
+126,LAX,PEK,United Airlines,UAL,530
+127,LAX,LHR,United Airlines,UAL,1230
+128,LAX,LHR,Delta Air Lines,DAL,1080
+129,PEK,ATL,Delta Air Lines,DAL,890
+130,PEK,ATL,Air China,CCA,870
+131,PEK,JFK,Air China,CCA,900
+132,PEK,JFK,China Eastern Airlines,CES,920
+133,PEK,LAX,Delta Air Lines,DAL,550
+134,PEK,LAX,Air China,CCA,530
+135,PEK,LHR,British Airways,BA,770
+136,PEK,LHR,China Southern Airlines,CSN,750
+137,PEK,DXB,Emirates,EK,930
+138,PEK,DXB,Qatar Airways,QTR,910
+139,HND,ATL,Delta Air Lines,DAL,890
+140,HND,ATL,ANA,ANA,870
+141,HND,JFK,Japan Airlines,JAL,950
+142,HND,JFK,ANA,ANA,930
+143,HND,SIN,Singapore Airlines,SQ,1100
+144,HND,SIN,Delta Air Lines,DAL,1080
+145,HND,LAX,Delta Air Lines,DAL,500
+146,HND,LAX,United Airlines,UAL,480
+147,HND,LHR,British Airways,BA,720
+148,HND,LHR,Virgin Atlantic,VS,700
+149,HND,DXB,Emirates,EK,880
+150,HND,DXB,Qatar Airways,QTR,860
+

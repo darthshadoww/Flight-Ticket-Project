@@ -13,24 +13,23 @@ def index():
     if request.method == 'POST':
         origin = request.form['origin']
         destination = request.form['destination']
-        date = request.form['date']
 
         available_flights = flights[(flights['origin'] == origin) &
                                     (flights['destination'] == destination)]
 
-        return render_template('pick-flights.html', flights=available_flights)  
+        return render_template('pick-flights.html', flights=available_flights.to_dict(orient='records'))
 
     return render_template('index.html', airports=airports.to_dict(orient='records'), flight=None)
 
 
 @app.route('/book', methods=['POST'])
 def book():
-    selected_flight_id = request.form.get('flight_id')
+    selected_flight_id = request.form.get('id')
 
     # Find the specific flight details
     selected_flight = flights[flights['id'] == selected_flight_id]
 
-    return render_template('book.html', flight=selected_flight)
+    return render_template('book.html', flight=selected_flight.to_dict(orient='records'))
 
 
 @app.route('/congrats', methods=['POST'])

@@ -6,9 +6,21 @@
 <body>
     <h1>Choose Your Flight</h1>
     <table>
+        <tr>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Company</th>
+            <th>Price</th>
+            <!-- Add more headers for other flight details -->
+        </tr>
         {% for flight in flights %}
         <tr>
-            <td> ... Flight details (origin, destination, price, etc.) ... </td>
+            <td>{{ flight.origin }}</td>
+            <td>{{ flight.destination }}</td>
+            <td>{{flight.company_name}}</td>
+            <td>{{ flight.price }}</td>
+
+            <!-- Add more cells for other flight details -->
             <td>
                 <form method="POST" action="/book">
                     <input type="hidden" name="flight_id" value="{{ flight.id }}">

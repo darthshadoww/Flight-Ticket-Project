@@ -7,9 +7,14 @@
 <body>
     <h1>Book Your Flight</h1>
 
-    <p>Origin: {{ flight.origin }}</p>
+    <p>Origin: {{ flight['origin'] }}</p>
     <p>Destination: {{ flight.destination }}</p>
-    <p>Date: {{ flight.date }}</p> <h2>Payment Details</h2>
+    <p>Date: {{ flight.date }}</p>
+    <p>Price: {{ flight.price }}</p>
+    <h2>Payment Details</h2>
+
+
+
     <form method="POST" action="/congrats">
         <input type="hidden" name="flight_id" value="{{ flight.id }}">
 
