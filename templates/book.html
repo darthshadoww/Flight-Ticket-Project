@@ -1,36 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Book Flight</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected Flight Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="/static/assets/book.css"/>
 </head>
 <body>
-    <h1>Book Your Flight</h1>
 
-    <p>Origin: {{ flight['origin'] }}</p>
-    <p>Destination: {{ flight.destination }}</p>
-    <p>Date: {{ flight.date }}</p>
-    <p>Price: {{ flight.price }}</p>
-    <h2>Payment Details</h2>
+<div class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="/static/assets/logo.png" height="60" alt="" srcset=""/>
+                <span>Yıldız<strong class="strong">Airlines</strong></span>
+            </div>
+            <div class="navigation">
+                <a href="/" id="ana_sayfa_btn" class="nav-link"><strong>Ana Sayfa</strong></a>
+                <a href="#" class="nav-link">Servisler</a>
+                <a href="#" class="nav-link"><strong>Teklifler</strong></a>
+                <a href="/about" class="nav-link">Hakkında</a>
+                <a href="/contact" class="nav-link"><strong>İletişim</strong></a>
+            </div>
 
+            <div class="controls">
+                <div class="icon"><i class="fa fa-search"></i></div>
+                <div class="icon"><i class="fa fa-user-alt"></i></div>
+                <div class="btn">Kayıt Ol</div>
+            </div>
+        </div>
+    </nav>
 
+    <div class="content">
+        <h1>Selected Flight Details</h1>
+        <div class="flight-details">
+            <p>Origin: {{ flight.origin }}</p>
+            <p>Destination: {{ flight.destination }}</p>
+            <p>Company: {{ flight.company_name }}</p>
+            <p>Price: {{ flight.price }}</p>
+        </div>
 
-    <form method="POST" action="/congrats">
-        <input type="hidden" name="flight_id" value="{{ flight.id }}">
+        <h2>Payment Details</h2>
+        <form action="/congrats" method="post">
+            <div class="flight-details">
+                <input type="hidden" name="origin" value="{{ flight.origin }}">
+                <input type="hidden" name="destination" value="{{ flight.destination }}">
+                <input type="hidden" name="company" value="{{ flight.company_name }}">
+                <input type="hidden" name="id" value="{{ flight.id }}">
+                <input type="hidden" name="price" value="{{ flight.price }}">
+            </div>
 
-        <label for="card_number">Credit Card Number:</label>
-        <input type="text" name="card_number" id="card_number" required><br><br>
-
-        <label for="expiry">Expiry Date (MM/YY):</label>
-        <input type="text" name="expiry" id="expiry" required><br><br>
-
-        <label for="cvv">CVV:</label>
-        <input type="text" name="cvv" id="cvv" required><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required><br><br>
-
-        <button type="submit">Book Flight</button>
-    </form>
+            <div class="form-box">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-box">
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" required>
+            </div>
+            <div class="form-box">
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" required>
+            </div>
+            <div class="form-box">
+                <label for="expiry_date">Expiry Date:</label>
+                <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/YYYY" required>
+            </div>
+            <div class="form-box">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+            <div class="form-box">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>

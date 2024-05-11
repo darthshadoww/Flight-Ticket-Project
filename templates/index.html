@@ -1,30 +1,95 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Flight Booking</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>Book Your Flight</h1>
-    <form method="POST" action="/">
-        <label for="origin">Origin:</label>
-        <select name="origin" id="origin">
-            {% for airport in airports %}
-            <option value="{{ airport['Code'] }}">{{ airport['Name'] }}</option>
-            {% endfor %}
-        </select>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yıldız Airlines</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/assets/first.css" />
+  </head>
 
-        <label for="destination">Destination:</label>
-        <select name="destination" id="destination">
-            {% for airport in airports %}
-            <option value="{{ airport['Code'] }}">{{ airport['Name'] }}</option>
-            {% endfor %}
-        </select>
+  <body>
+    <div class="header">
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">
+            <img
+              src="/static/assets/logo.png"
+              height="60"
+              alt=""
+              srcset=""
+            />
 
-        <label for="date">Date:</label>
-        <input type="date" name="date" id="date" required>
+            <span>Yıldız<strong class="strong">Airlines</strong></span>
+          </div>
+          <div class="navigation">
+            <a href="/" class="nav-link"><strong>Ana Sayfa</strong></a>
+            <a href="#" class="nav-link">Servisler</a>
+            <a href="#" class="nav-link"><strong>Teklifler</strong></a>
+            <a href="/about" class="nav-link">Hakkında</a>
+            <a href="/contact" class="nav-link"><strong>İletişim</strong></a>
+          </div>
 
-        <button type="submit">Search Flights</button>
-    </form>
-</body>
+          <div class="controls">
+            <div class="icon"><i class="fa fa-search"></i></div>
+            <div class="icon"><i class="fa fa-user-alt"></i></div>
+            <div class="btn">Kayıt Ol</div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="head">
+          <h2>Yıldız Airlines for a perfect flight experience</h2>
+          <h5 class="subtitle">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is
+          </h5>
+        </div>
+        
+        <div class="booking-box">
+          <div class="form scroll-b">
+            <form method="POST" action="/">
+              <div class="line">
+                  <div class="box">
+                    <label for="origin">Origin:</label>
+                    <select name="origin" id="origin">
+                        {% for airport in airports %}
+                        <option value="{{ airport['Code'] }}">{{ airport['Name'] }}</option>
+                        {% endfor %}
+                    </select>
+
+                  </div>
+                  <div class="box">
+                    <label for="destination">Destination:</label>
+                    <select name="destination" id="destination">
+                        {% for airport in airports %}
+                        <option value="{{ airport['Code'] }}">{{ airport['Name'] }}</option>
+                        {% endfor %}
+                    </select>
+
+                  </div>
+                  <div class="date_box">
+                      <label for="date">Uçuş Tarihi</label>
+                      <input type="date" id="date" />
+                  </div>
+              </div>
+              <div class="line-r">
+
+                <button type="submit" class="btn" id="flightSearch_btn">Uçuş Ara</button>
+              </div>
+          </form>
+
+
+
+          </div>
+        </div>
+     
+      </div>
+    </div>
+  </body>
 </html>

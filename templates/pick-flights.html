@@ -1,34 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Choose Your Flight</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yıldız Airlines</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/static/assets/book_style.css" />
 </head>
-<body>
-    <h1>Choose Your Flight</h1>
-    <table>
-        <tr>
-            <th>Origin</th>
-            <th>Destination</th>
-            <th>Company</th>
-            <th>Price</th>
-            <!-- Add more headers for other flight details -->
-        </tr>
-        {% for flight in flights %}
-        <tr>
-            <td>{{ flight.origin }}</td>
-            <td>{{ flight.destination }}</td>
-            <td>{{flight.company_name}}</td>
-            <td>{{ flight.price }}</td>
 
-            <!-- Add more cells for other flight details -->
-            <td>
-                <form method="POST" action="/book">
-                    <input type="hidden" name="flight_id" value="{{ flight.id }}">
-                    <button type="submit">Book</button>
-                </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+<body>
+<div class="header">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="/static/assets/logo.png" height="60" alt="" srcset="" />
+                <span>Yıldız<strong class="strong">Airlines</strong></span>
+            </div>
+            <div class="navigation">
+                <a href="/" class="nav-link"><strong>Ana Sayfa</strong></a>
+                <a href="#" class="nav-link">Servisler</a>
+                <a href="#" class="nav-link"><strong>Teklifler</strong></a>
+                <a href="/about" class="nav-link">Hakkında</a>
+                <a href="/contact" class="nav-link"><strong>İletişim</strong></a>
+            </div>
+            <div class="controls">
+                <div class="icon"><i class="fa fa-search"></i></div>
+                <div class="icon"><i class="fa fa-user-alt"></i></div>
+                <div class="btn">Kayıt Ol</div>
+            </div>
+        </div>
+    </nav>
+    <div class="tickets">
+        <h1>Uçuşlar</h1>
+        <div class="bilet-container">
+            {% for flight in flights %}
+            <div class="bilet">
+                <div class="from">
+                    <label for="first-city">Kalkış</label>
+                    <span>{{ flight.origin }}</span>
+                    <div class="logo_from">
+                        <img src="/static/assets/plane-from.png" alt="" srcset="" />
+                    </div>
+                </div>
+                <div class="arrival">
+                    <label for="arrival">Varış</label>
+                    <span>{{ flight.destination }}</span>
+                    <div class="logo_arrival">
+                        <img
+                          src="/static/assets/plane-arrival.png"
+                          alt=""
+                          srcset=""
+                        />
+                    </div>
+                </div>
+
+                <div class="date">
+                    <label for="first-city">Company</label>
+                    <span>{{flight.company_name}}</span>
+                    <div class="logo_date">
+                        <img
+                          src="/static/assets/calendar-date.png"
+                          alt=""
+                          srcset=""
+                        />
+                    </div>
+                </div>
+                <div class="fee">
+                    <label for="first-city">Price</label>
+                    <span>{{ flight.price }}</span>
+                    <div class="logo_fee">
+                        <img src="/static/assets/money-fee.png" alt="" srcset="" />
+                    </div>
+                </div>
+
+                <div class="flight-buy-button">
+                    <form method="POST" action="{{ url_for('book') }}">
+                        <input type="hidden" name="origin" value="{{ flight.origin }}">
+                        <input type="hidden" name="destination" value="{{ flight.destination }}">
+                        <input type="hidden" name="company" value="{{ flight.company_name }}">
+                        <input type="hidden" name="flight_id" value="{{ flight.id }}">
+                        <button type="submit">Book</button>
+                    </form>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
 </body>
 </html>
