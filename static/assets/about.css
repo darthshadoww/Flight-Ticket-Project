@@ -1,0 +1,111 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+.header {
+    background: linear-gradient(to top, rgba(20, 24, 27, 0.5), rgba(43, 89, 126, 0.53)), url(./background.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-width: 1000px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #191970;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    gap: 1rem;
+}
+
+.navbar .logo .strong {
+    color: #F4A460;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.navbar .navigation, .navbar .controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.navbar .navigation .nav-link {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: antiquewhite;
+}
+
+.navbar .navigation .nav-link:hover {
+    color: aquamarine;
+}
+
+.navbar .controls .icon {
+    background-color: #23242f;
+    color: #fff;
+    width: 80px;
+    height: 45px;
+    display: flex;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .controls .btn {
+    background-color: #373c9e;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    border-radius: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .controls .btn:hover {
+    color: #259dc9;
+}
+
+.navbar .controls .icon:hover {
+    color: #259dc9;
+}
+
+.content {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+.content p {
+    color: #fff; /* Text color changed to white */
+    font-size: 1.3rem; /* Font size increased */
+}
